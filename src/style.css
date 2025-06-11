@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.tab-container {
+    display: flex;
+    position: relative;
+    width: 600px;
+    height: 50px;
+    background-color: #1a1a1a;
+    border-radius: 25px;
+    overflow: hidden;
+
+}
+
+.tab-option{
+    flex: 1;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    color: #888;
+    z-index: 1;
+    position: relative;
+    transition: color 0.3s ease;
+    
+
+}
+
+.tab-slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-color: #3a6cf4;
+    border-radius: 25px;
+    z-index: 0;
+    transition: 0.3s ease;
+}
+
+input[type="radio"] {
+    display: none;
+}   
+
+input#tab1:checked ~ .tab-slider {
+    transform: translateX(0%);
+}
+
+input#tab2:checked ~ .tab-slider {
+    transform: translateX(100%);
+}
+
+input#tab3:checked ~ .tab-slider {
+    transform: translateX(200%);
+}
+
+input#tab4:checked ~ .tab-slider {
+    transform: translateX(300%);
+}
+
+input#tab1:checked + label, input#tab2:checked + label,
+input#tab3:checked + label, input#tab4:checked + label {
+    color: #fff;
+}
